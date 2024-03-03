@@ -20,4 +20,7 @@ Explanation: The digits that appear in s are [1]. There is no second-largest dig
 """
 
 s = "ck077"
-print(sorted(set([int(c) for c in s if c.isdigit()]),reverse=True)[1])
+only_digits = [int(c) for c in s if c.isdigit()]
+remove_duplicate_digits = set(only_digits)
+sorted_digits = sorted(remove_duplicate_digits)
+print(sorted_digits)

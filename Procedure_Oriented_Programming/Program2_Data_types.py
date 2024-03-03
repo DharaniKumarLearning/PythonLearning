@@ -142,7 +142,7 @@ print(f'bool(0.0) = {bool(0.0)}')  # If the final value of float is 0 then bool(
 print(f'bool("Dharani") = {bool("Dharani")}')
 print(f'bool("") = {bool("")}')  # If the string literal is empty bool() returns False else True
 
-# str() function can be used to convet other data type to string
+# str() function can be used to convert other data type to string
 print(f'str(10) = {str(10)}')
 print(f'str(10.5) = {str(10.5)}')
 print(f'str(True) = {str(True)}')

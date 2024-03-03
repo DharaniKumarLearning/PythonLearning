@@ -132,3 +132,191 @@ print(f"Creating a string using comma as a delimiter for the collection : {','.j
 # sorted(s) -- sort the characters in the string and returns list
 # chr(int) -- will return the character present in the ASCII value we passed
 # ord(character) -- will return the ASCII value of the character we passed
+
+s = 'Dharani'
+print(f"original string :- {s}")
+print(f"sorted(s) = {sorted(s)}")  # returns a list
+print(f"chr(97) = {chr(97)}")
+print(f"ord('a') = {ord('a')}")
+
+# Slice operator
+
+"""
+
+syntax :- s[begin:end:step]
+step value can be either positive or negative
+The default value of step is 1
+
+If the step value is positive the slice operator will move in forward direction from begin to end - 1 index
+In forward direction the default value of begin is 0 and the default value of end is length of the string
+
+If the step value is negative the slice operator will move in backward direction from begin to end + 1 index
+In backward direction the default value of begin is -1 and the default value of end is -(length_of_the_string + 1)
+In the backward direction if the end value is -1 the result is always an empty string
+
+"""
+
+s = '0123456789'
+
+print(f"The original string is :- {s}")
+print(f"s[1:5] = {s[1:5]}")  # will return the characters starting from index 1 to 4
+print(f"s[:4] = {s[:4]}")  # since the default value of begin is 0 it will return characters from index 0 to 3
+print(f"s[2:] = {s[2:]}")  # since the default value of end is the length of the string it will return characters from index 2 to end - 1
+print(f"s[:] = {s[:]}")  # will return a copy of the original string
+print(f"s[-1:-4] = {s[-1:-4]}")  # since we can not go from index -1 to -5 in forward direction it will return an empty string
+print(f"s[-4:-1] = {s[-4:-1]}")  # will return characters from -4 to -2
+print(f"s[100:] = {s[100:]}")  # slice operator won't give any IndexError instead it returns an empty string
+print(f"s[1:7:2] = {s[1:7:2]}")  # will return every second character starting from index 1 to 6
+
+print(f"s[::-1] = {s[::-1]}")  # will return the string in reverse order
+print(f"s[2:8:-1] = {s[2:8:-1]}")  # since we can not go from index 2 to 9 in backward direction it returns an empty string
+print(f"s[8:2-1] = {s[8:2:-1]}")  # 876543
+print(f"s[-1:-6:-1] = {s[-1:-6:-1]}")  # 98765
+print(f"s[2:-5:1] = {s[2:-5:1]}")  # 234
+print(f's[1:6:-2] = {s[1:6:-2]}')  # empty string
+print(f's[0:-5:-5] = {s[0:-5:-5]}')  # empty string
+print(f's[:0:-1] = {s[:0:-1]}')  # 987654321
+print(f's[-1::-1] = {s[-1::-1]}')  # 9876543210
+print(f's[-5:0:-9] = {s[-5:0:-9]}')  # 5
+print(f's[2:-1:-1] = {s[2:-1:-1]}')  # since the end value is -1 in the backward direction it will always return empty string
+
+# Program to print string in reverse order
+s = 'Dharani Kumar Gopavaram'
+print(f"The reverse of the string is :- {s[::-1]}")  # one way is using slice operator
+print(f"The reverse of the string is :- {''.join(reversed(s))}")  # 2nd way is using reversed function with join
+
+# 3rd way by writing the code
+reversed_s = ''
+for pos in range(len(s) - 1,-1,-1):
+    reversed_s += s[pos]
+print(f"The reverse of the string is :- {reversed_s}")
+
+# Input :- Dharani Kumar Gopavaram
+# Output :- Gopavaram Kumar Dharani
+
+s = 'Dharani Kumar Gopavaram'
+print(f"The input is :- {s}")
+print(f"Output is :- {' '.join(s.split(' ')[::-1])}")  # using slice operator with join
+print(f"Output is :- {' '.join(reversed(s.split()))}")  # using reversed with join
+
+# Input :- Durga Software Solutions
+# Output :- agruD erawtfoS snoituloS
+
+s = 'Durga Software Solutions'
+print(f"The input is :- {s}")
+print(f"Output is :- {' '.join([word[::-1] for word in s.split()])}")  # here we are using list comprehension
+
+# Print the characters at even and odd position
+s = 'Dharani Kumar Gopavaram'
+
+# using slice operator
+print(f'The characters at even position are :- {s[::2]}')
+print(f'The characters at odd position are :- {s[1::2]}')
+
+# without using slice operator
+even_chars = odd_chars = ''
+for i in range(0,len(s),2):
+    try:
+        even_chars += s[i]
+        odd_chars += s[i + 1]
+    except IndexError:
+        pass
+
+print(f'The characters at even position are :- {even_chars}')
+print(f'The characters at odd position are :- {odd_chars}')
+
+# Input :- B4A13D
+# Output :- ABD134
+
+s = 'B4A13D'
+print(f"Input :- {s}")
+only_nums = only_chars = ''
+for c in s:
+    if c.isdigit():
+        only_nums += c
+    else:
+        only_chars += c
+
+print(f"Output :- {''.join(sorted(only_chars)) + ''.join(sorted(only_nums))}")
+
+# Input :- ab10cd5
+# Output :- ababababababababababcdcdcdcdcd
+
+s = 'ab10cd5'
+
+print(f"Input :- {s}")
+found_digit = False
+digits = chars = result = ''
+for c in s:
+    if c.isdigit():
+        found_digit = True
+        digits += c
+    else:
+        if found_digit:
+            result += chars * int(digits)
+            found_digit = False
+            chars = c
+            digits = ''
+        else:
+            chars += c
+
+if found_digit:
+    result += chars * int(digits)
+else:
+    result += chars
+
+print(f"Output is :- {result}")
+
+# Input :- s1 = 'RAVI', s2 = 'RAMAKRISHNA'
+# Output :- RRAAVMIAKRISHNA
+
+s1 = 'RAVI'
+s2 = 'RAMAKRISHNA'
+max_length = max(len(s1),len(s2))
+result = ''
+for i in range(max_length):
+    if i < len(s1):
+        result += s1[i]
+    if i < len(s2):
+        result += s2[i]
+print(f"Output :- {result}")
+
+# Program to remove duplicates from string
+
+s = 'aaabbbbaaaddccc'
+print(f"The original string is :- {s}")
+
+# using set
+print(f"The string without duplicates is :- {''.join(set(s))}")  # once we convert to set the order will be lost
+
+# writing the code
+
+result = ''
+for c in s:
+    if c not in result:
+        result += c
+
+print(f"The string without duplicates is :- {result}")
+
+# Print the number of occurrences of every character in the string
+s = 'aaabbbbaaaddccc'
+d = {}
+
+print(f"The original string is :- {s}")
+for c in s:
+    if c not in d:
+        d[c] = 1
+    else:
+        d[c] += 1
+
+for k,v in d.items():
+    print(f"{k} -> {v} times in the string")
+
+
+
+
+
+
+
+
+
