@@ -86,7 +86,7 @@ print(f'The value of the TOTAL is {TOTAL}')
 
 # If the identifier starts with underscore symbol it indicates that it is private
 # If the identifier starts with two underscore symbols then it is strongly private
-# If the identifier starts and ends with two underscore symbols then it is language specific identifie
+# If the identifier starts and ends with two underscore symbols then it is language specific identifier
 
 print(f'All the keywords present in the current version of Python are :- {keyword.kwlist}')
 

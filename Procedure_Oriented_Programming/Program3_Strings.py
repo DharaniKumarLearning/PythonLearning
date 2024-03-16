@@ -7,10 +7,6 @@ In Python strings will have two indexes.
  + ve index -- from left to right
  - ve index -- from right to left
 
-String Methods :-
-
-    The lstrip, rstrip and strip methods doesn't remove in between spaces
-
 """
 
 s = "Dharani Kumar Gopavaram"  # String index starts from 0
