@@ -1,0 +1,13 @@
+pandas is a data analysis library that allows us to easily read and work with different types of data.
+We can use this library to analyse csv files, Excel files etc.,
+It allows to easily read in and analyse data and also has great performance since it is built on top of NumPy
+
+import pandas as pd -- to import the pandas package
+df = pd.read_csv("survey_results_public.csv") -- To read a csv file and create a dataframe
+
+Dataframe is the backbone of the pandas
+Dataframe is basically rows and columns
+
+df.shape -- To know the number of rows and columns present in the Dataframe in the tuple form
+df.info() -- Along with the number of rows and columns it displays the datatype of all the columns present in the dataframe
+

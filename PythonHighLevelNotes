@@ -1,0 +1,178 @@
+Python is dynamically typed programming language
+Python was developed by Guido Van Rossum
+
+Python data types :- int, float, complex, bool, str
+int data type can be represented in decimal, binary, octal and hexadecimal form
+base conversion functions :- bin(), oct(), hex()
+bool data type has only two values True and False
+Type casting :- converting from one data type to another data type
+Type casting functions :- int(), float(), bool(), complex() and str()
+int, float, complex, bool and str are immutable data types
+
+bytes data type is immutable
+bytearray is immutable
+
+String is a sequence of characters. We can access the characters in the string by placing the index in square brackets.
+We can traverse through all the characters of the string using for loop and while loop
+String methods :- len(s), s.lstrip(), s.rstrip(), s.strip(), s.find(substring), s.find(substring, begin), s.find(substring, begin, end),
+    s.index(substring), s.index(substring, begin), s.index(substring, begin, end), s.count(substring), s.count(substring, begin),
+    s.count(substring, begin, end), s.replace(old_string, new_string), s.replace(old_string, new_string, count), s.split(),
+    s.split(separator), s.split(separator, count), s.rsplit(separator, count), separator.join(collection), s.upper(), s.lower(),
+    s.swapcase(), s.title(), s.capitalize(), s.startswith(substring), s.endswith(substring), s.isalnum(), s.isalpha(), s.isdigit(),
+    s.islower(), s.isupper(), s.istitle(), s.isspace(), sorted(s), chr(int), ord(character), reversed(s)
+
+Slice operator is used to extract substring from the original string
+Syntax :- s[begin:end:step] -- step value can be either positive or negative
+If the step value is positive slice operator will move from left to right from begin to end - 1 index
+In the forward direction the default value of begin is 0 and the default value of end is the length of the string
+If the step value is negative slice operator will move from right to left from begin to end + 1 index
+In the backward direction the default value of begin is -1 and the default value of end is -(length_of_string + 1)
+If the value of end is -1 in the backward direction the slice operator will always returns an empty string
+
+List is a collection which is mutable where insertion order is preserved, duplicates are allowed and heterogeneous objects are allowed.
+Lists are represented using square brackets
+We can access the elements of the list using index, slice operator, for loop and while loop
+List methods :- len(sample_list), sample_list.count(element), sample_list.index(element), sample_list.append(element),
+       sample_list.insert(index, element), sample_list.extend(sequence), sample_list.remove(element), sample_list.pop(),
+       sample_list.pop(index), sample_list.reverse(), sample_list.sort(), sample_list.sort(reverse=True), sample_list.copy(),
+       sample_list.clear(),  list(sequence)
+All the list methods won't return a new list object instead it modifies the list in place
+
+Tuple is a collection which is immutable where insertion order is preserved, duplicates are allowed and heterogeneous objects are allowed
+Tuples are represented using parentheses
+We can access the elements of the tuple using index, slice operator, for loop and while loop
+Tuple methods :- len(tuple), sample_tuple.count(element), sample_tuple.index(element), sorted(tuple),
+           min(tuple), max(tuple), tuple(sequence)
+
+Range data type is used to represent sequence of numbers which are always immutable
+range function is overloaded it has 3 forms :- range(10), range(11, 20), range(10, 101, 5)
+The syntax is more like slice operator
+
+Set is a collection which is mutable where insertion order is not preserved, duplicates are not allowed and heterogeneous objects are allowed
+Sets are represented using curly braces
+We can traverse through the elements of the set using for loop
+Set methods :- len(set), set(sequence), sample_set.add(element), sample_set.update(sequence), sample_set.update(multiple_sequences),
+        sample_set.copy(), sample_set.pop(), sample_set.remove(element), sample_set.discard(element), sample_set.clear(),
+Mathematical operations on sets :- s1.union(s2), s1 | s2, s1.intersection(s2), s1 & s2, s1.difference(s2), s1 - s2,
+            s1.symmetric_difference(s2), s1 ^ s2
+
+Frozenset is same as set the only difference is frozenset is immutable whereas set is mutable
+
+dict data structure is used when we want to store the data in the form of key/value pairs.
+dict is also represented using curly braces and we can access the value associated with a key by placing the key in square brackets
+dict methods :- len(dict), dict(tuple_of_tuples), sample_dict.get(key), sample_dict.get(key, default_value),
+    sample_dict.pop(key), sample_dict.popitem(), sample_dict.keys(), sample_dict.values(), sample_dict.items(),
+    sample_dict.copy(), sample_dict.clear(), sample_dict.update(another_dict)
+
+Different types of operator in Python :-
+1. Arithmetic operator (+, -, *, /, &, %, //(floor division operator), **(exponential operator)
+2. Relational or comparison operator (>, <, >=, <=, ==, !=)
+3. Logical operators (and, or, not)
+4. Bitwise operators (&, |, ^, ~, <<, >>)
+5. Assignment operators (+=, -=, *= ...)
+6. Special operator (is, is not, in, not in)
+
+input() function is used to read input from the user.
+input() function will always treat the input entered by the user as a string. We need to do explicit type casting
+
+A module in a Python program is basically a group of functions, variables and classes with a name defined to it
+Any Python file can be used as a module
+
+Several ways to import modules to our program
+    1. import math
+    2. from math import sqrt, ceil
+    3. import math as m
+
+A module can only be imported once to a program if you want to import the module again after making some changes
+you need to use reload(module) function present in importlib module.
+Some of the important modules present in Python are :- math, os, random, importlib, time
+
+Important functions and variables present in math module :- math.sqrt(num), math.pi, math.ceil(float_num),
+    math.floor(float_num), math.fabs(float_num)
+
+Important functions present in random module :- random.random(), random.randint(1, 100), random.uniform(),
+    random.randrange(10), random.randrange(30,100), random.randrange(1, 11, 2), random.choices(sequence),
+    random.choice(sequence)
+
+dir() -- to know the members present in the current module
+dir(module_name) -- to know the members present in the module specified
+help(module_name) -- to get a detailed description of all the methods present in the module
+
+__name__ variable will help us figure out how the function call got executed is it directly from a file or as a
+module from some other program
+
+argv is the variable which can hold all the command line arguments passed to a python program.
+argv variable is present in sys module.
+
+Python has the below flow control statements.
+    1. Conditional statements :- if, else, elif
+    2. Iterative statements :- for, while
+    3. Transfer control statements :- break, continue, pass
+
+we can have else block with for loop.
+The else block will get executed if the break statement didn't get executed in the for loop.
+Syntactically if we require a block in our Python program that doesn't do anything we can use pass keyword
+
+Function is a group of statements which can be reused. It is the best reusable component of a program.
+Even functions are objects in Python.
+Functions are defined using def keyword. Python doesn't have overloaded functions.
+In Python a function can return multiple values.
+Types of arguments to a function : Positional argument, Keyword argument, Default argument,
+    Variable length argument, Keyword Variable Length Arguments
+If we are passing positional and keyword arguments while calling the function the positional arguments should come first
+The default arguments to a function should be defined at the last while defining the function
+The variable length arguments to a function are defined using *parameter_name.
+    The type of variable length argument parameter of a function is tuple and can accept any number of parameters
+The keyword variable arguments to a function are defined using **parameter_name
+    The type of keyword variable length argument parameter of a function is dict and can accept any number of key=value pairs
+
+Type of variable in Python
+Global variables :- Variables defined outside a function are called global variables
+    Global variables are accessible to all the function defined in the module
+Local variables :- Variables defined inside a function are called local variables
+    Local variables defined in one function can not be accessed in another function
+If we want to edit the global variable value inside a function then we can use either global keyword or globals() dictionary
+
+Sometimes we can define a function without name such type of nameless functions are called anonymous functions
+Anonymous functions are helpful when you want to pass functions as arguments to other functions
+Some examples of function which accepts functions as arguments is :- filter(), map(), reduce()
+reduce() is present in functools module
+Function inside a function is known as nested function. We can write nested functions in Python
+A function can return another function which is also possible in Python
+Function decorators are used to extend the functionality of the existing function
+Without changing the function logic if you want to play with the function parameters then we can use decorators
+We can have multiple decorators for a single function which is called decorator chaining
+
+Generators in Python are a powerful tool for creating iterators.
+They allow you to iterate over a potentially large sequence of data without creating the entire sequence in memory at once
+This can be more memory efficient and faster compared to traditional approaches, especially when dealing with large data sets
+We can use for loops and while loops to traverse through the elements of a generator. A generator is lost once consumed.
+generators also have a next method which will return the next value present in the generator.
+Once all the values are consumed in a generator we get StopIteration exception.
+We can use yield keyword to return a generator from a function
+
+Packages are nothing but a group of related modules.
+Packages can contain sub-packages in them as well.
+Packages help us to resolve naming conflicts.
+Before Python 3.3 a folder can be treated as a Python package if it contains __init__.py file
+Since Python 3.3 we don't need to have __init__.py file inside a folder to be considered as a package
+
+Preventing the abnormal termination of a program is called exception handling
+There are two types of errors.
+    1. syntax error
+    2. Runtime error also known as exceptions
+Some unwanted, unexpected event which disturbs the normal execution flow of the program is called Exception
+The purpose of exception handling is graceful termination of the program
+Defining an alternate way to continue the rest of the program normally is the meaning of exception handling
+Every exception in Python is a class
+All exception classes are child class of BaseException directly or indirectly.
+
+We can have multiple except blocks with try.
+When we have multiple except blocks the execution order will be from top to bottom.
+It means if we specify parent exception class first the bottom child class won't get executed
+Single except block can handle multiple exceptions
+finally block will get executed whether the exception handled or not handled
+We can have nested try-except-finally block
+We can use raise keyword to raise user defined exceptions
+
+
