@@ -83,6 +83,10 @@ print(f"The type of the variable t is {type(t)} and its value is : {t}")
 p, q, r, s = t  # this is called tuple unpacking
 print(f"p : {p}, q : {q}, r : {r}, s : {s}")
 
+m, n, _, p = t  # If you want to ignore any value from the tuple you can use underscore to ignore that value
+print(f"m = {m}, n= {n}, p = {p}")
+
+
 # we can apply this packing and unpacking on any type of sequence
 # Tuple comprehension is not supported
 

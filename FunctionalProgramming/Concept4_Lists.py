@@ -197,3 +197,13 @@ for c in sentence:
 print(f"The vowels present in the sentence {sentence} are : {''.join(vowels_list)}")
 
 # Lists can not be used as keys in a dictionary
+
+sample_list = [1, 2, 3, 4, 5]
+first_element, *remaining_elements = sample_list  # The syntax to extract first and last elements of list
+print(f"first_element = {first_element}")
+print(f"remaining_elements = {remaining_elements}")
+
+*first_element, remaining_elements = sample_list  # The syntax to extract all the elements and last element
+print(f"first_element = {first_element}")
+print(f"remaining_elements = {remaining_elements}")
+

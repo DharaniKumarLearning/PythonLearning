@@ -133,6 +133,19 @@ print(f"Calling the sum_multiple_num function with two arguments : {sum_multiple
 print(f"Calling the sum_multiple_num function with five arguments : {sum_multiple_num(100, 200, 300, 400, 500)}")
 
 
+def multiply(n1, n2, n3):
+    return n1 * n2 * n3
+
+
+sample_list = [10, 20, 30]
+print(f"calling multiply function : {multiply(*sample_list)}")
+# expanding the values in a dictionary to pass it to a list
+
+sample_dict = {"n1": 10, "n2": 20, "n3": 30}
+print(f"calling the multiply function by passing dictionary : {multiply(**sample_dict)}")
+# while passing a dictionary to a function the parameters to the function and the keys of the dictionary should be same
+
+
 def student_sum(*marks, name):
     print(f"The sum of the marks of the student {name} is : {sum(marks)}")
 
