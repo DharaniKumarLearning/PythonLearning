@@ -18,5 +18,3 @@ for val in argv[1:]:
     cmd_args_sum += int(val)
 
 print(f"The sum of the command line arguments is : {cmd_args_sum}")
-
-
