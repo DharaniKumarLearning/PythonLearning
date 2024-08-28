@@ -7,7 +7,7 @@ from importlib import reload
 
 print(f"Using sqrt function present in math module to get the sqrt of 10 : {math.sqrt(10)}")
 print(f"Getting the value of by accessing the pi variable present in math module : {math.pi}")
-print(f"Checking whether a file exists or not using function present in od module")
+print(f"Checking whether a file exists or not using function present in os module")
 print(o.path.exists("/Users/dharanikumar/Downloads/check.txt"))
 
 print(f"dmm.x = {dmm.x}")

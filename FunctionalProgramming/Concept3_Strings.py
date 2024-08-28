@@ -126,7 +126,7 @@ print(f"Creating a string out of a list :- {'|'.join(sample_list)}")
 # s.title() -- first character of every word in the string starts with uppercase
 # s.capitalize() -- first character of the string starts with uppercase rest all the characters are lowercase
 
-s = 'package1 Kumar Gopavaram'
+s = 'Dharani Kumar Gopavaram'
 print(f"Original string : {s}")
 print(f"s.lower() : {s.lower()}")
 print(f"s.upper() : {s.upper()}")

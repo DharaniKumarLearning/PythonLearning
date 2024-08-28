@@ -5,7 +5,7 @@ Different types of operator in Python.
     3. Logical operators (and, or, not)
     4. Bitwise operators (&, |, ^, ~, <<, >>)
     5. Assignment operators (+=, -=, *= ...)
-    6. Special operator (is, is not, in, not in)
+    6. Special operator (is, is not, in, not rin)
 """
 
 print(f"Normal division operator : 10 / 3 = {10 / 3}")  # normal division operator will always return the result in float only
